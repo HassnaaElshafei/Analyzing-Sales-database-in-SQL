@@ -1,4 +1,4 @@
--- Basic questions
+
 -- How many customers do not have DOB information available?
 SELECT COUNT(cust_id) AS count_of_nulls
 FROM customers
@@ -94,7 +94,7 @@ FROM orders
 GROUP BY order_month;
 
 
--- Question On SQL Joins
+
 -- How many units have been sold by each brand? Also get total returned units for each brand.
 SELECT  brand, SUM(CASE WHEN order_type='buy' THEN tot_units ELSE 0 END) AS total_units_sold ,
         SUM(CASE WHEN order_type='return' THEN tot_units ELSE 0 END) AS total_units_returned
@@ -141,7 +141,7 @@ INNER JOIN orders o on p.product_id = o.product_id
 GROUP BY  p.product_name;
 
 
--- Advanced questions
+
 
 --For every order_id (exclude returns), get the product name and calculate the discount
 --percentage from selling price. Sort by highest discount and print only those rows where
